@@ -1,0 +1,4 @@
+bin/
+.idea/
+node-modules/
+trade-bot-website.iml
