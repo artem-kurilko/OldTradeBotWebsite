@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>New Providence</title>
+  
+  <title>Trade bot</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="..\public\fonts\font-awesome\css\font-awesome.min.css"> <!-- Font Awesome -->
   <link rel="stylesheet" href="..\public\css\normalize.css"> <!-- CSS reset -->
@@ -30,8 +30,8 @@
           <li><a href="#">Tour</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#plan">Стоимость</a></li>
-          <li><a href="#">Помощь</a></li>
-          <li><a href="#">Контакты</a></li>
+          <li><a href="#subscribe">Помощь</a></li>
+          <li><a href="#subscribe">Контакты</a></li>
           <li><a href="#" class="btn btn-blue"><i class="fa fa-apple"></i> Get App</a></li>
         </ul>
 
@@ -76,12 +76,57 @@
   <section id="header">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2 text-center">
-          <h1 class="wow fadeInUp">What happens tomorrow?</h1>
+        <div class="col-md-6">
+          <h1 class="wow fadeInUp">Как это работает...?</h1>
           <p class="wow fadeInUp" data-wow-delay=".2s">The sight of the tumblers restored Bob Sawyer to a degree of equanimity which he had not possessed since his interview with his landlady. His face brightened up, and he began to feel quite convivial.</p>
         </div>
 
-        <img src="..\public\images\pic.png" class="trade-image">  
+
+        <div class="col-md-5 col-md-offset-1">
+          <div class="purchase-form">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Ваше имя</label>
+                <input type="text" required class="form-control" id="exampleInputPassword1" placeholder="Your name">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Почта</label>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Ключ апи</label>
+                <input type="password" required class="form-control" id="exampleInputPassword1" placeholder="API KEY">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Секретный ключ</label>
+                <input type="password" required class="form-control" id="exampleInputPassword1" placeholder="SECRET KEY">
+              </div>
+
+              <label>Выберите тариф</label>
+
+              <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+              Начальный
+              </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                Продвинутый
+                </label>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </section><!-- //Header -->
@@ -89,11 +134,13 @@
   <section id="features">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 feature-item">
+        <div class="col-md-4 feature-item">
           <div class="feature wow fadeInUp">
-            <div class="f-icon"><i class="lnr lnr-lock"></i></div>
+            <div class="f-icon">
+              <img src="..\public\images\icons\lock.png">
+            </div>
             <div class="f-description">
-              <h4>Real-time all the time</h4>
+              <h4>Безопасность</h4>
               <p>Thus much I thought proper to tell you in relation to yourself, and to the trust I reposed in you.
 
 Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door.</p>
@@ -101,17 +148,34 @@ Just then her head struck against the roof of the hall: in fact she was now more
           </div>
         </div>
 
-        <div class="col-md-6 feature-item">
+        <div class="col-md-4 feature-item">
           <div class="feature wow fadeInUp" data-wow-delay=".1s">
-            <div class="f-icon"><i class="lnr lnr-clock"></i></div>
+            <div class="f-icon">
+              <img src="..\public\images\icons\speed.png">
+            </div>
             <div class="f-description">
-              <h4>Adopt without any obstacles</h4>
+              <h4>Скорость</h4>
               <p>This sounded a very good reason, and Alice was quite pleased to know it. 'I never thought of that before!' she said.
 
 This I have produced as a scantling of Jack’s great eloquence and the force of his reasoning upon such abstruse matters.</p>
             </div>
           </div>
         </div>
+
+        <div class="col-md-4 feature-item">
+            <div class="feature wow fadeInUp" data-wow-delay=".1s">
+            <div class="f-icon">
+              <img src="..\public\images\icons\reliability.png">
+            </div>
+            <div class="f-description">
+              <h4>Надежность</h4>
+              <p>This sounded a very good reason, and Alice was quite pleased to know it. 'I never thought of that before!' she said.
+
+This I have produced as a scantling of Jack’s great eloquence and the force of his reasoning upon such abstruse matters.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section><!-- //Features -->
@@ -119,9 +183,9 @@ This I have produced as a scantling of Jack’s great eloquence and the force of
   <section id="iphone-feature">
     <div class="container">
       <div class="row">
-        <div class="col-md-5 col-md-offset-7">
+        <div class="col-md-5">
           <h2>
-            Your day is protected
+            Ваши инвестиции защищены
           </h2>
           <p>
             There have not been any since we have lived here, said my mother. 
@@ -134,14 +198,14 @@ This I have produced as a scantling of Jack’s great eloquence and the force of
           </div>
         </div>
 
-        <div class="iphone-showcase wow fadeInLeft">
-          <div class="device">
-            <img src="..public\images\iphone-feature.png" alt="">
+        <div class="col-md-6">
+          <div class="wow fadeInLeft"> 
+            <img src="..\public\images\pic.png" class="trade-image">
           </div>
-        </div><!-- //iPhone Showcase -->
+        </div>
       </div>
     </div>
-  </section><!-- //iPhone Feature -->
+  </section>
 
   <section id="plan">
     <div class="container">
