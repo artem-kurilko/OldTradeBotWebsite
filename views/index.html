@@ -17,6 +17,8 @@
 
 </head>
 <body>
+  <noscript>You must <a href="http://www.enable-javascript.com" target="_blank">enable JavaScript</a> in your web browser in order to pay via Stripe.</noscript>
+
 
   <header id="main-nav">
     <div class="container">
@@ -62,7 +64,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="wow fadeInUp">Как это работает...?</h1>
+          <h1 class="wow fadeInUp"> торговый бот</h1>
           <p class="wow fadeInUp" data-wow-delay=".2s">The sight of the tumblers restored Bob Sawyer to a degree of equanimity which he had not possessed since his interview with his landlady. His face brightened up, and he began to feel quite convivial.</p>
         </div>
 
@@ -118,12 +120,39 @@
                   </label>
                 </div>
               </div>
-              </div>
 
-              <div class="row text-center">
-                <button type="submit" class="btn btn-primary mb-2 sendBtn">Отправить</button>
-              </div>
+                <div class="row text-center">
+                  <button class="btn btn-primary" type="submit">Отправить
+                  <script
+                    src = "https://checkout.stripe.com/checkout.js"
+                    data-key = "pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem"
+                    data-amount="500"
+                    data-name = "Monthly payment"
+                    data-description = "for access to trade bot"
+                    data-locale = "auto"
+                    data-label = "Отправить"
+                    data-currency = "usd">
+                  </script></button>
+                </div>
             </form>
+
+            <!-- <div class="row text-center">
+                <form action = "/charge" method="post">
+                  <script
+                    src = "https://checkout.stripe.com/checkout.js"
+                    class = "stripe-button"
+                    data-key = "pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem"
+                    data-amount="500"
+                    data-name = "Monthly payment"
+                    data-description = "for access to trade bot"
+                    data-locale = "auto"
+                    data-label = "Отправить"
+                    data-currency = "usd">
+                  </script>
+                </form>
+             </div> -->
+                  
+
           </div>
         </div>
 
@@ -269,13 +298,17 @@
   <footer id="footer">
     <div class="container footer-container">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <img class="logo" src="..public\images\logo.png" alt="">
-          <p>It was some time before he obtained any answer, and the reply, when made, was unpropitious.</p>
+          <blockquote class="blockquote">
+            <p class="mb-0">Понимание того, на что не стоит обращать внимания, столь же важно, как понимание того, на чем следует сфокусироваться.</p>
+            <footer class="blockquote-footer">Уоррен Баффет</footer>
+          </blockquote>
+          
           <a href="#" class="app_download"><img src="..public\images\app-store-download.png" alt=""></a>
-    
         </div>
-        <div class="col-md-2 col-md-offset-3 col-sm-4 col-xs-6 footer-links">
+
+        <div class="col-md-2 col-md-offset-2 col-sm-4 col-xs-6 footer-links">
           <ul>
             <li><p class="title">Узнать больше</p></li>
             <li><a href="#how-works">Как это работает?</a></li>

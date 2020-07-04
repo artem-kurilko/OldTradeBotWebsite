@@ -1,6 +1,6 @@
 'use strict';
 
-const stripe = require('stripe')('pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem\n');
+/*const stripe = require('stripe')('pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem');
 
 let customerEmail = "";
 
@@ -8,7 +8,7 @@ stripe.customers.create({
     email: `${customerEmail}`,
 })
     .then(customer => console.log(customer.id))
-    .catch(error => console.error(error));
+    .catch(error => console.error(error));*/
 
 const mysql = require("mysql2");
 const express = require('express');
@@ -32,9 +32,14 @@ connection.connect(function (err) {
     console.log("Connected to MySQL.");
 });*/
 
-server.get('/', function (request, response) {
+server.get('/', function(request, response) {
     response.sendFile(__dirname + '/views/index.html');
 });
+
+/*server.get('/paymentsuccess', function(request, response){
+    response.render('paymentsuccess',{
+    });
+});*/
 
 server.listen(PORT, () => {
     console.log(`Server has been started on ${PORT} port...`)
