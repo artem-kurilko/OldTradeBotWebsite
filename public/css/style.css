@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 62px;
+  font-size: 48px;
   line-height: 72px;
 }
 
@@ -102,7 +102,7 @@ ul > li {
   border-radius: 30px;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
-}
+} 
 
 .btn:active, .btn:focus {
   outline: none;
@@ -132,13 +132,13 @@ ul > li {
 .btn-green:hover, .btn-green:focus,
 .btn-dark:hover, .btn-dark:focus {
   color: #ffffff;
-}
+} 
+
 
 /*****************************************************
 *** Inputs ***
 *****************************************************/
-input[type="text"],
-input[type="email"] {
+ .send-email input {
   width: 502px;
   height: 50px;
   max-width: 100%;
@@ -152,29 +152,28 @@ input[type="email"] {
   -webkit-border-radius: 30px;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus {
+.form-group input:focus {
   outline: none;
   color: #26272d;
-}
+} 
 
 /*****************************************************
 *** Forms ***
 *****************************************************/
 #ready-to-buy .form-group,
-#subscribe .form-group {
+#contact .form-group {
   position: relative;
   width: 502px;
   max-width: 100%;
   margin: 0 auto;
 }
 
-#subscribe h3{
+#contact h3{
   font-weight: 400;
 }
 
 #ready-to-buy .form-group .btn,
-#subscribe .form-group .btn {
+#contact .form-group .btn {
   position: absolute;
   top: 4px;
   right: 4px;
@@ -227,9 +226,9 @@ input[type="email"]:focus {
   color: #267df4;
 }
 
-#main-nav ul li .help {
+/* #main-nav ul li .help {
   color: rgba(38, 39, 45, 0.4);
-}
+} */
 
 #main-nav ul li .btn-blue {
   color: #ffffff;
@@ -328,28 +327,6 @@ input[type="email"]:focus {
   margin: 0;
 }
 
-#main-nav #slide_out_menu .slide_out_menu_footer .socials {
-  margin: 18px 0 0;
-}
-
-#main-nav #slide_out_menu .slide_out_menu_footer .socials li {
-  display: inline-block;
-  margin: 0 20px 0 0;
-}
-
-#main-nav #slide_out_menu .slide_out_menu_footer .socials li a {
-  color: rgba(255, 255, 255, 0.8);
-  transition: all .2s ease-in-out;
-}
-
-#main-nav #slide_out_menu .slide_out_menu_footer .socials li a:hover {
-  color: #ffffff;
-}
-
-#main-nav #slide_out_menu .slide_out_menu_footer .socials li:last-child {
-  margin-right: 0;
-}
-
 #main-nav #slide_out_menu.xs-screen {
   overflow-y: auto;
 }
@@ -369,28 +346,6 @@ input[type="email"]:focus {
   line-height: 24px;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
-}
-
-#main-nav #slide_out_menu.xs-screen .slide_out_menu_footer .socials {
-  margin: 18px 0 0;
-}
-
-#main-nav #slide_out_menu.xs-screen .slide_out_menu_footer .socials li {
-  display: inline-block;
-  margin: 0 20px 0 0;
-}
-
-#main-nav #slide_out_menu.xs-screen .slide_out_menu_footer .socials li a {
-  color: rgba(255, 255, 255, 0.8);
-  transition: all .2s ease-in-out;
-}
-
-#main-nav #slide_out_menu.xs-screen .slide_out_menu_footer .socials li a:hover {
-  color: #ffffff;
-}
-
-#main-nav #slide_out_menu.xs-screen .slide_out_menu_footer .socials li:last-child {
-  margin-right: 0;
 }
 
 #main-nav #slide_out_menu.open {
@@ -426,10 +381,14 @@ input[type="email"]:focus {
 }
 
 .purchase-form{
-  margin-top: -40px;
+  margin-top: -60px;
   border: 2px solid grey;
   border-radius: 6px;
-  padding: 40px 80px 40px 80px;
+  padding: 20px 40px 20px 40px;
+}
+
+.purchase-form input{
+  margin-left: 20px;
 }
 
 .form-control:before{
@@ -459,102 +418,32 @@ input[type="email"]:focus {
 /*****************************************************
 *** iPhone Feature ***
 *****************************************************/
-#iphone-feature {
+#how-works {
   position: relative;
-  padding: 200px 0 200px;
+  padding: 180px 0 180px;
 }
 
-#iphone-feature .btns-container {
+#how-works .btns-container {
   margin-top: 62px;
 }
 
-#iphone-feature .btns-container a {
+#how-works .btns-container a {
   margin-right: 20px;
   margin-bottom: 18px;
 }
 
-#iphone-feature .btns-container a i {
+#how-works .btns-container a:hover{
+  transition: 0.4s;
+  transform: translateX(14px);
+}
+
+#how-works .btns-container a i {
   margin-left: 50px;
   font-size: 14px;
 }
 
-#iphone-feature .btns-container a:last-child {
+#how-works .btns-container a:last-child {
   margin-right: 0;
-}
-
-#iphone-feature .iphone-showcase {
-  position: absolute;
-  bottom: 110px;
-  right: 50%;
-}
-
-/*****************************************************
-*** iPhone Screens ***
-*****************************************************/
-#iphone-screens {
-  padding: 140px 0 800px;
-  position: relative;
-  background-color: #f4f4f5;
-  overflow: hidden;
-}
-
-#iphone-screens h2 {
-  margin-bottom: 0;
-}
-
-#iphone-screens hr {
-  width: 50px;
-  height: 2px;
-  margin: 40px auto;
-  background-color: #267df4;
-}
-
-#iphone-screens .images-list {
-  width: 100%;
-  position: relative;
-}
-
-#iphone-screens .images-list li {
-  position: absolute;
-  width: 320px;
-  top: 92px;
-  box-shadow: 10px 10px 16px 0px rgba(61, 61, 62, 0.15);
-}
-
-#iphone-screens .images-list li img {
-  max-width: 100%;
-}
-
-#iphone-screens .images-list li:nth-child(1) {
-  left: 50%;
-  margin-left: -880px;
-}
-
-#iphone-screens .images-list li:nth-child(2) {
-  left: 50%;
-  margin-left: -530px;
-}
-
-#iphone-screens .images-list li:nth-child(4) {
-  right: 50%;
-  margin-right: -530px;
-}
-
-#iphone-screens .images-list li:nth-child(5) {
-  right: 50%;
-  margin-right: -880px;
-}
-
-#iphone-screens .images-list li.main-img {
-  width: 395px;
-  top: 0;
-  left: 50%;
-  margin-left: -193px;
-  box-shadow: none;
-}
-
-#iphone-screens .images-list li.main-img img {
-  max-width: 100%;
 }
 
 /*****************************************************
@@ -652,45 +541,19 @@ input[type="email"]:focus {
   color: #ffffff;
 }
 
-#plan #price_tables .individual, #plan #price_tables .company {
-  position: relative;
-  width: 100%;
-  opacity: 0;
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-  transition: opacity 0.97s, -webkit-transform 0.97s;
-  transition: opacity 0.97s, transform 0.97s;
-  transition: opacity 0.97s, transform 0.97s, -webkit-transform 0.97s;
-  transition-timing-function: cubic-bezier(0.545, 0, 0.05, 1);
-}
-
-#plan #price_tables .individual .price-table, #plan #price_tables .company .price-table {
-  display: none;
-}
-
-#plan #price_tables .individual.active, #plan #price_tables .company.active {
-  opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-#plan #price_tables .individual.active .price-table, #plan #price_tables .company.active .price-table {
-  display: block;
-}
-
 /*****************************************************
-*** Subscribe ***
+*** contact ***
 *****************************************************/
-#subscribe {
+#contact {
   padding: 90px 0 50px;
 }
 
-#subscribe .btn {
+#contact .btn {
   padding-left: 34px;
   padding-right: 34px;
 }
 
-#subscribe .promise {
+#contact .promise {
   font-size: 14px;
   margin-top: 10px;
   margin-bottom: 0;
@@ -702,7 +565,7 @@ input[type="email"]:focus {
 #footer {
   color: #8c8f94;
   font-size: 16px;
-  padding-bottom: 36px;
+  padding-bottom: 90px;
 }
 
 #footer .footer-container {
@@ -788,35 +651,23 @@ Responsive Styles
     font-size: 42px;
     color: #267df4;
   }
-  /*** iPhone Feature ***/
- /*  #iphone-feature {
-   padding: 40px 0 40px;
- } */
 
-  #iphone-feature .iphone-showcase {
+/*** How works ***/
+
+  #how-works .iphone-showcase {
     position: relative;
     bottom: auto;
     right: auto;
     padding: 0 15px;
     /*margin-top: 64px;*/
   }
-  #iphone-feature .iphone-showcase img {
+  #how-works .iphone-showcase img {
     width: 100%;
   }
  
   /*** Plan ***/
   #plan {
     padding: 120px 0 150px;
-  }
-  #plan #price_tables .individual.active, #plan #price_tables .company.active {
-    margin-top: 80px;
-  }
-  #plan .toggle-container .switch-toggles .individual, #plan .toggle-container .switch-toggles .company {
-    margin-top: 0;
-  }
-  /*** Footer ***/
-  #footer .socials {
-    margin-bottom: 60px;
   }
   #footer .footer-links {
     margin-bottom: 30px;
@@ -869,12 +720,13 @@ Responsive Styles
   }
   /*** Header ***/
   #header {
-    padding: 160px 0 460px;
+    /*margin-bottom: 200px;*/
+    /*padding: 160px 0 2000px;*/
   }
  
   /*** Ready to Buy  ***/
   #ready-to-buy .form-group .btn,
-  #subscribe .form-group .btn {
+  #contact .form-group .btn {
     position: relative;
     margin-top: 14px;
   }

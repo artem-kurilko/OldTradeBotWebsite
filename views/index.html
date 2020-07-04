@@ -76,46 +76,55 @@
             <form>
 
               <div class="form-group row">
-                <label for="inputName" class="col-sm-2 col-form-label">Имя</label>
-                <div class="col-sm-10">
+                <label for="inputName" class="col-sm-3 col-form-label">Имя</label>
+                <div class="col-sm-9">
                   <input type="text" required class="form-control" id="inputName" placeholder="Ваше имя" >
                 </div>
               </div>
                 
               <div class="form-group row">
-                <label for="inputEmail" class="col-sm-2 col-form-label">Почта</label>
-                <div class="col-sm-10">
-                  <input type="email" required class="form-control" id="inputEmail" placeholder="Password">
+                <label for="inputEmail" class="col-sm-3 col-form-label">Почта</label>
+                <div class="col-sm-9">
+                  <input type="email" required class="form-control" id="inputEmail" placeholder="Email">
                 </div>
               </div>
 
               <div class="form-group row">
-                <label for="inputApiKey" class="col-sm-2 col-form-label">АПИ ключ</label>
-                <input type="text" id="inputApiKey" required placeholder="API KEY">
+                <label for="inputApiKey" class="col-sm-3 col-form-label">АПИ ключ</label>
+                <div class="col-sm-9">
+                  <input type="text" id="inputApiKey" class="form-control" required placeholder="API KEY">
+                </div>
               </div>
 
               <div class="form-group row">
-                <label for="inputSecretKey" class="col-sm-2 col-form-label">Секретный ключ</label>
-                <input type="text" id="inputSecretKey" required placeholder="SECRET KEY">
+                <label for="inputSecretKey" class="col-sm-3 col-form-label">Секретный ключ</label>
+                <div class="col-sm-9">
+                  <input type="text" id="inputSecretKey" required class="form-control" placeholder="SECRET KEY">
+                </div>
               </div>
-              
-              <!--<label>Выберите тариф</label>
-              
-              <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-              <label class="form-check-label" for="exampleRadios1">
-              Начальный
-              </label>
+
+              <div class="form-group row">
+                <label class="col-sm-3">Тариф</label>
+
+                <div class="col-sm-9">
+                <div class="form-check-input">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked name="plan">
+                  <label class="form-check-label" for="exampleRadios1">
+                  Начальный план
+                  </label>
+                </div>
+                <div class="form-check-input">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" name="plan" value="option2">
+                  <label class="form-check-label" for="exampleRadios2">
+                  Продвинутый план
+                  </label>
+                </div>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
-                <label class="form-check-label" for="exampleRadios2">
-                Продвинутый
-                </label>
               </div>
-              <br>
-              <button type="submit" class="btn btn-primary">Submit</button>
-              </div> -->
+
+              <div class="row text-center">
+                <button type="submit" class="btn btn-primary mb-2 sendBtn">Отправить</button>
+              </div>
             </form>
           </div>
         </div>
@@ -135,9 +144,9 @@
             </div>
             <div class="f-description">
               <h4>Безопасность</h4>
-              <p>Thus much I thought proper to tell you in relation to yourself, and to the trust I reposed in you.
+              <p>Данные ваших ключей передаются через шифрованный канал связи.
 
-Just then her head struck against the roof of the hall: in fact she was now more than nine feet high, and she at once took up the little golden key and hurried off to the garden door.</p>
+              Приложение работает автономно, что защищает от многих web аттак. Нам не требуется разрешение на вывод денежных средств по вашим ключям, вы можете в любой момент их удалить или ограничить доступ.</p>
             </div>
           </div>
         </div>
@@ -149,9 +158,7 @@ Just then her head struck against the roof of the hall: in fact she was now more
             </div>
             <div class="f-description">
               <h4>Скорость</h4>
-              <p>This sounded a very good reason, and Alice was quite pleased to know it. 'I never thought of that before!' she said.
-
-This I have produced as a scantling of Jack’s great eloquence and the force of his reasoning upon such abstruse matters.</p>
+              <p>Наши сервера работаю на SSD накопителх, а с Nvmes кеширование и запросы к базе данных криптобирж выполняются быстрее, а именно на 200% быстрее чем устаревший HDD. Торговый бот работает в ассинхроном режиме, что позволяет его ещё ускорить.</p>
             </div>
           </div>
         </div>
@@ -163,9 +170,7 @@ This I have produced as a scantling of Jack’s great eloquence and the force of
             </div>
             <div class="f-description">
               <h4>Надежность</h4>
-              <p>This sounded a very good reason, and Alice was quite pleased to know it. 'I never thought of that before!' she said.
-
-This I have produced as a scantling of Jack’s great eloquence and the force of his reasoning upon such abstruse matters.</p>
+              <p>При высоких нагрузках автоматически подключаются дополнительные сервера, даные ваших выполненных заказов всегда сверяются с активными, и другими факторами, что позволяет убедится в правильной последовательности ордеров.</p>
             </div>
           </div>
         </div>
@@ -174,7 +179,7 @@ This I have produced as a scantling of Jack’s great eloquence and the force of
     </div>
   </section><!-- //Features -->
 
-  <section id="iphone-feature">
+  <section id="how-works">
     <div class="container">
       <div class="row">
         <div class="col-md-5">
@@ -274,20 +279,20 @@ This I have produced as a scantling of Jack’s great eloquence and the force of
         </div>
         <div class="col-md-2 col-md-offset-3 col-sm-4 col-xs-6 footer-links">
           <ul>
-            <li><p class="title">Learn More</p></li>
-            <li><a href="#">How it works?</a></li>
+            <li><p class="title">Узнать больше</p></li>
+            <li><a href="#how-works">Как это работает?</a></li>
           </ul>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 footer-links">
           <ul>
-            <li><p class="title">About Us</p></li>
-            <li><a href="#">About us</a></li>
+            <li><p class="title">Стоимость</p></li>
+            <li><a href="#plan">Тарифные планы</a></li>
           </ul>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 footer-links">
           <ul>
-            <li><p class="title">Support</p></li>
-            <li><a href="#">F.A.Q.</a></li>
+            <li><p class="title">Поддержка</p></li>
+            <li><a href="#contact">Напишите нам</a></li>
           </ul>
         </div>
       </div>
