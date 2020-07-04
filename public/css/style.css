@@ -92,7 +92,9 @@ ul > li {
 /*****************************************************
 *** Buttons ***
 *****************************************************/
-.btn {
+.btns-container .btn,
+ #price_tables .btn,
+ #contact .btn{
   font-size: 16px;
   font-weight: 400;
   padding: 9px 16px;
@@ -113,13 +115,13 @@ ul > li {
   padding: 14px 48px;
 }
 
-.btn-blue {
+.btns-container .btn-blue {
   background-color: #267df4;
   color: white;
 }
 
-.btn-green {
-  background-color: #6fc754;
+#contact .btn-green {
+  background-color: #267df4;
   color: white;
 }
 
@@ -258,6 +260,7 @@ ul > li {
 
 #main-nav ul.right {
   text-align: right;
+    padding: 9px 0;
 }
 
 #main-nav .logo {
@@ -311,41 +314,12 @@ ul > li {
   margin-top: 20px;
 }
 
-#main-nav #slide_out_menu .slide_out_menu_footer {
-  position: absolute;
-  display: block;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  padding: 20px 40px 25px;
-}
-
-#main-nav #slide_out_menu .slide_out_menu_footer .more-info p {
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-}
-
 #main-nav #slide_out_menu.xs-screen {
   overflow-y: auto;
 }
 
 #main-nav #slide_out_menu.xs-screen ul {
   margin-top: 40px;
-}
-
-#main-nav #slide_out_menu.xs-screen .slide_out_menu_footer {
-  position: relative;
-  padding: 0;
-  margin-top: 40px;
-}
-
-#main-nav #slide_out_menu.xs-screen .slide_out_menu_footer .more-info p {
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
 }
 
 #main-nav #slide_out_menu.open {
@@ -382,9 +356,22 @@ ul > li {
 
 .purchase-form{
   margin-top: -60px;
-  border: 2px solid grey;
-  border-radius: 6px;
-  padding: 20px 40px 20px 40px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 30px 40px 30px 40px;
+}
+
+.purchase-form h3{
+  margin: 10px 0 40px 0;
+  font-weight: 400;
+}
+
+.purchase-form .sendBtn{
+    margin-top: 40px;
+}
+
+.purchase-form label{
+  padding-top: 8px;
 }
 
 .purchase-form input{
