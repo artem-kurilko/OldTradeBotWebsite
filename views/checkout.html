@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Оплата</title>
+    <link rel="stylesheet" href="..\public\css\bootstrap.min.css"> <!-- Bootstrap Grid -->
+    <link rel="stylesheet" href="..\public\css\checkout.css">
+</head>
+<body>
+    <div class="payment-checkout">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 left">
+                    <div class="privilege">
+                        <h2 class="text-center">Приобретая доступ<br> вы получаете:</h2>
+                        <ul>
+                            <li>5 дней бесплатно работы бота</li>
+                            <li>Поддержка на каждом шаге подключения</li>
+                            <li>Уведомления на телефон и почту при заказе продвинутого плана </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 right">
+                    <div class="description">
+                        <h2>Оплата</h2>
+                        <br>
+                        <ul>
+                            <li>Тарифный план: начальный</li>
+                            <li>Срок: 30 дней</li>
+                            <li>Стоимость: 5$</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <form>
+                        <script
+                                src = "https://checkout.stripe.com/checkout.js"
+                                data-label="Оплатить"
+                                class = "stripe-button"
+                                data-key = "pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem"
+                                data-amount="500"
+                                data-name = "Monthly payment"
+                                data-description = "for access to trade bot"
+                                data-currency = "usd">
+                        </script>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="..\public\js\jquery-2.1.4.min.js"></script> <!-- jQuery -->
+    <script src="..\public\js\bootstrap.min.js"></script>  <!-- Bootstrap -->
+</body>
+</html>

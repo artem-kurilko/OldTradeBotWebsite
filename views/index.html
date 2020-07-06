@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Trade bot</title>
+  <title>Торговый бот</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="..\public\fonts\font-awesome\css\font-awesome.min.css"> <!-- Font Awesome -->
   <link rel="stylesheet" href="..\public\css\normalize.css"> <!-- CSS reset -->
@@ -19,7 +19,7 @@
 <body>
   <noscript>You must <a href="http://www.enable-javascript.com" target="_blank">enable JavaScript</a> in your web browser in order to pay via Stripe.</noscript>
 
-
+  <!-- Main nav -->
   <header id="main-nav">
     <div class="container">
 
@@ -36,8 +36,6 @@
           <li><a href="#contact">Помощь</a></li>
           <li><a href="#contact">Контакты</a></li>
         </ul>
-
-        
       </div> <!-- / Burger menu -->
       
       <div class="row">
@@ -58,7 +56,7 @@
         </div>
       </div>
     </div>
-  </header><!-- //Main Nav -->
+  </header><!-- / Main Nav -->
 
   <section id="header">
     <div class="container">
@@ -68,10 +66,10 @@
           <p class="wow fadeInUp" data-wow-delay=".2s">The sight of the tumblers restored Bob Sawyer to a degree of equanimity which he had not possessed since his interview with his landlady. His face brightened up, and he began to feel quite convivial.</p>
         </div>
 
-
+        <!-- Purchase form -->
         <div class="col-md-5 col-md-offset-1">
           <div class="purchase-form">
-            <form>
+            <form action="http://localhost:3000/checkout" method="post">
               <h3 class="text-center">Оставить заявку</h3>
 
               <div class="form-group row">
@@ -106,61 +104,33 @@
                 <label class="col-sm-3">Тариф</label>
 
                 <div class="col-sm-9">
-                <div class="form-check-input">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked name="plan">
-                  <label class="form-check-label" for="exampleRadios1">
-                  Начальный план
-                  </label>
-                </div>
+                  <div class="form-check-input">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked name="plan">
+                    <label class="form-check-label" for="exampleRadios1">
+                    Начальный план
+                    </label>
+                  </div>
 
-                <div class="form-check-input">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" name="plan" value="option2">
-                  <label class="form-check-label" for="exampleRadios2">
-                  Продвинутый план
-                  </label>
+                  <div class="form-check-input">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" name="plan" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                    Продвинутый план
+                    </label>
+                  </div>
                 </div>
+              </div> <!-- END OF CHOOSE PLAN  -->
+
+              <div class="row text-center">
+                <button class="btn btn-primary sendBtn" type="submit">Отправить</button>
               </div>
-
-                <div class="row text-center">
-                  <button class="btn btn-primary" type="submit">Отправить
-                  <script
-                    src = "https://checkout.stripe.com/checkout.js"
-                    data-key = "pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem"
-                    data-amount="500"
-                    data-name = "Monthly payment"
-                    data-description = "for access to trade bot"
-                    data-locale = "auto"
-                    data-label = "Отправить"
-                    data-currency = "usd">
-                  </script></button>
-                </div>
             </form>
-
-            <!-- <div class="row text-center">
-                <form action = "/charge" method="post">
-                  <script
-                    src = "https://checkout.stripe.com/checkout.js"
-                    class = "stripe-button"
-                    data-key = "pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem"
-                    data-amount="500"
-                    data-name = "Monthly payment"
-                    data-description = "for access to trade bot"
-                    data-locale = "auto"
-                    data-label = "Отправить"
-                    data-currency = "usd">
-                  </script>
-                </form>
-             </div> -->
-                  
-
           </div>
         </div>
-
-
       </div>
     </div>
   </section><!-- //Header -->
 
+<!-- Features -->
   <section id="features">
     <div class="container">
       <div class="row">
@@ -185,7 +155,7 @@
             </div>
             <div class="f-description">
               <h4>Скорость</h4>
-              <p>Наши сервера работаю на SSD накопителх, а с Nvmes кеширование и запросы к базе данных криптобирж выполняются быстрее, а именно на 200% быстрее чем устаревший HDD. Торговый бот работает в ассинхроном режиме, что позволяет его ещё ускорить.</p>
+              <p>Наши сервера работаю на SSD накопителх, а с Nvmes кеширование и запросы к базе данных криптобирж выполняются быстрее, а именно на 200% быстрее чем на устаревший HDD. Торговый бот работает в ассинхроном режиме, что позволяет его ещё ускорить.</p>
             </div>
           </div>
         </div>
@@ -197,15 +167,16 @@
             </div>
             <div class="f-description">
               <h4>Надежность</h4>
-              <p>При высоких нагрузках автоматически подключаются дополнительные сервера, даные ваших выполненных заказов всегда сверяются с активными, и другими факторами, что позволяет убедится в правильной последовательности ордеров.</p>
+              <p>При высоких нагрузках автоматически подключаются дополнительные сервера, даные ваших выполненных заказов всегда сверяются с активными ордерами, и другими факторами, что позволяет убедится в правильной последовательности ордеров.</p>
             </div>
           </div>
         </div>
 
       </div>
     </div>
-  </section><!-- //Features -->
+  </section><!-- / Features -->
 
+<!-- Description how works -->
   <section id="how-works">
     <div class="container">
       <div class="row">
@@ -222,7 +193,6 @@
             <a href="#plan" class="btn">Читать далее</a>
           </div>
         </div>
-
         <div class="col-md-6">
           <div class="wow fadeInLeft"> 
             <img src="..\public\images\pic.png" class="trade-image">
@@ -230,8 +200,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> <!-- / Description how works -->
 
+  <!-- Purchase plan -->
   <section id="plan">
     <div class="container">
       <div class="row">
@@ -248,7 +219,6 @@
               <div class="table-inner text-center">
                 <h3>Начальный</h3>
                 <span class="price">$4.99</span>
-                <!-- <p class="phrase">Build your schedule<br> every day</p> -->
                 <ul class="feature-list">
                   <li><i class="fa fa-check"></i> Круглосуточная торговля</li>
                   <li><i class="fa fa-check"></i> Доступ к бирже HitBtc для торговли парой BTC/USDT</li>
@@ -261,7 +231,6 @@
               <div class="table-inner text-center">
                 <h3>Продвинутый</h3>
                 <span class="price">$7.49</span>
-                <!-- <p class="phrase">Make your life<br> better</p> -->
                 <ul class="feature-list">
                   <li><i class="fa fa-check"></i> Доступ к 3 криптобиржам <br>(HitBtc, Binance, EXMO)</li>
                   <li><i class="fa fa-check"></i> Торговля несколькими криптовалютными парами</li>
@@ -274,8 +243,9 @@
         </div>
       </div>
     </div>
-  </section><!-- //Plan -->
+  </section><!-- / Purchase plan -->
 
+  <!-- Contact us  -->
   <section id="contact">
     <div class="container">
       <div class="row">
@@ -288,12 +258,11 @@
               <a href="#" class="btn btn-green">Отправить</a>
             </div>
           </form>
-          <!-- <p class="promise">We promise to never spam you.</p> -->
         </div>
       </div>
       </div>
     </div>
-  </section>
+  </section> <!-- / Contact us  -->
 
   <footer id="footer">
     <div class="container footer-container">

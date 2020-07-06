@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #EEF2F7;
+}
+
+
+li{
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+.payment-checkout {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  min-height: 550px;
+  border-radius: 8px;
+  width: 50vw;
+  margin: 100px auto;
+  background: white;
+}
+
+.left {
+  color: #fff;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  width: 25vw;
+  display: block;
+  background: #2A6B9F;
+  float:left;
+  min-height: 550px;
+}
+
+.privilege h2{
+  padding-bottom: 20px;
+}
+
+.right {
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  float: left;
+  width: 25vw;
+  display: block;
+  min-height: 550px;
+}
+
+.right .description h2{
+  padding-bottom: 34px;
+}
+
+.right form{
+  text-align: center;
+  padding-top: 60px;
+}
+
+.description ul{
+  list-style: none;
+}
+
+.description h2{
+  padding-left: 0;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

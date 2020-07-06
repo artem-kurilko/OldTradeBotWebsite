@@ -355,10 +355,11 @@ ul > li {
 }
 
 .purchase-form{
+  box-shadow: 0 0 2px rgba(0,0,0,0.5);
   margin-top: -60px;
   border: 1px solid grey;
   border-radius: 4px;
-  padding: 30px 40px 30px 40px;
+  padding: 40px 40px 40px 40px;
 }
 
 .purchase-form h3{
@@ -367,7 +368,7 @@ ul > li {
 }
 
 .purchase-form .sendBtn{
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .purchase-form label{
@@ -425,7 +426,7 @@ ul > li {
 }
 
 #how-works .btns-container a i {
-  margin-left: 50px;
+  margin-left: 30px;
   font-size: 14px;
 }
 
@@ -476,12 +477,6 @@ ul > li {
   border-radius: 30px;
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
-}
-
-#plan .price-table .table-inner .phrase {
-  font-size: 20px;
-  line-height: 28px;
-  margin-bottom: 38px;
 }
 
 #plan .price-table .table-inner .feature-list li {
@@ -538,12 +533,6 @@ ul > li {
 #contact .btn {
   padding-left: 34px;
   padding-right: 34px;
-}
-
-#contact .promise {
-  font-size: 14px;
-  margin-top: 10px;
-  margin-bottom: 0;
 }
 
 /*****************************************************

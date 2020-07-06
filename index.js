@@ -1,14 +1,23 @@
 'use strict';
 
-/*const stripe = require('stripe')('pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem');
+const stripe = require('stripe')('pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem');
 
-let customerEmail = "";
-
-stripe.customers.create({
-    email: `${customerEmail}`,
-})
-    .then(customer => console.log(customer.id))
-    .catch(error => console.error(error));*/
+const session = stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    line_items: [{
+        price_data: {
+            currency: 'usd',
+            product_data: {
+                name: 'T-shirt',
+            },
+            unit_amount: 500,
+        },
+        quantity: 1,
+    }],
+    mode: 'payment',
+    success_url: 'http://',
+    cancel_url: 'http://example.com/cancel',
+});
 
 const mysql = require("mysql2");
 const express = require('express');
@@ -36,10 +45,9 @@ server.get('/', function(request, response) {
     response.sendFile(__dirname + '/views/index.html');
 });
 
-/*server.get('/paymentsuccess', function(request, response){
-    response.render('paymentsuccess',{
-    });
-});*/
+server.get('/checkout', function(request, response){
+
+});
 
 server.listen(PORT, () => {
     console.log(`Server has been started on ${PORT} port...`)
