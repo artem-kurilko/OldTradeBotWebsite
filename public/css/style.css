@@ -33,7 +33,7 @@ h1 {
 
 h2 {
   font-size: 52px;
-  line-height: 52px;
+  line-height: 58px;
   margin-bottom: 64px;
 }
 
@@ -228,10 +228,6 @@ ul > li {
   color: #267df4;
 }
 
-/* #main-nav ul li .help {
-  color: rgba(38, 39, 45, 0.4);
-} */
-
 #main-nav ul li .btn-blue {
   color: #ffffff;
 }
@@ -260,13 +256,19 @@ ul > li {
 
 #main-nav ul.right {
   text-align: right;
-    padding: 9px 0;
+  padding: 9px 0;
 }
 
 #main-nav .logo {
   display: inline-block;
   padding-top: 11px;
 }
+
+#main-nav .logo i{
+  font-size: 18px;
+  color: #26272d;
+}
+
 
 #main-nav #slide_out_menu {
   position: fixed;
@@ -340,7 +342,6 @@ ul > li {
 *****************************************************/
 #header {
   padding: 200px 0 200px;
-  /*background-image: url(../images/banner_background.jpg);*/
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -349,7 +350,7 @@ ul > li {
 }
 
 #header p {
-  padding-top: 40px;
+  padding-top: 0px;
   font-size: 20px;
   color: #8c8f94;
 }

@@ -1,24 +1,5 @@
 'use strict';
 
-const stripe = require('stripe')('pk_test_4MbmUEdZmjnDIi3UEUFhVk3U00ngyNRjem');
-
-const session = stripe.checkout.sessions.create({
-    payment_method_types: ['card'],
-    line_items: [{
-        price_data: {
-            currency: 'usd',
-            product_data: {
-                name: 'T-shirt',
-            },
-            unit_amount: 500,
-        },
-        quantity: 1,
-    }],
-    mode: 'payment',
-    success_url: 'http://',
-    cancel_url: 'http://example.com/cancel',
-});
-
 const mysql = require("mysql2");
 const express = require('express');
 const server = express();
@@ -27,7 +8,8 @@ const PORT = process.env.PORT || 3000;
 
 server.use("/public", express.static('public'));
 
-/*const connection = mysql.createConnection({
+// Connect to database
+const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   database: "tradebot",
@@ -39,14 +21,22 @@ connection.connect(function (err) {
     return console.error("Error: " + err.message);
   else
     console.log("Connected to MySQL.");
-});*/
+});
 
+// Website's API
 server.get('/', function(request, response) {
     response.sendFile(__dirname + '/views/index.html');
 });
 
-server.get('/checkout', function(request, response){
+server.post('/checkout', function(request, response){
+    response.sendFile(__dirname + '/views/checkout.html');
+});
 
+server.get('*', function(request, response){
+    if (request.accepts('html')) {
+        response.sendFile(__dirname + '/view/error.html');
+        return;
+    }
 });
 
 server.listen(PORT, () => {
@@ -54,8 +44,8 @@ server.listen(PORT, () => {
 });
 
 /*
-  // sending mail
-  var nodemailer = require('nodemailer');
+// Sending Email
+var nodemailer = require('nodemailer');
 
 var transporter = nodemailer.createTransport({
   service: 'gmail',
