@@ -26,7 +26,7 @@
       <!-- <a id="navigation" href="#"><i class="fa fa-bars"></i></a> -->
 
       <!-- Burger menu -->
-      <div id="slide_out_menu">
+      <!-- <div id="slide_out_menu">
         <a href="#" class="menu-close"><i class="fa fa-times"></i></a>
         <div class="logo"><img src="images/logo-white.png" alt=""></div>
         <ul>
@@ -36,7 +36,7 @@
           <li><a href="#contact">Помощь</a></li>
           <li><a href="#contact">Контакты</a></li>
         </ul>
-      </div> <!-- / Burger menu -->
+      </div>  --><!-- / Burger menu -->
       
       <div class="row">
         <div class="col-md-5">
@@ -48,7 +48,6 @@
         <div class="col-md-2 text-center">
           <a href="#" class="logo">
             <i class="fa fa-square" aria-hidden="true">     Trade bot</i>
-            <!-- <img src="..public\images\logo.png" alt="Trade bot"> -->
           </a>
         </div>
         <div class="col-md-5">
@@ -78,28 +77,28 @@
               <div class="form-group row">
                 <label for="inputName" class="col-sm-3 col-form-label">Имя</label>
                 <div class="col-sm-9">
-                  <input type="text" required class="form-control" id="inputName" placeholder="Ваше имя" >
+                  <input type="text" name="userName" required class="form-control" id="inputName" placeholder="Ваше имя" >
                 </div>
               </div>
                 
               <div class="form-group row">
                 <label for="inputEmail" class="col-sm-3 col-form-label">Почта</label>
                 <div class="col-sm-9">
-                  <input type="email" required class="form-control" id="inputEmail" placeholder="Email">
+                  <input type="email" name="email" required class="form-control" id="inputEmail" placeholder="Email">
                 </div>
               </div>
 
               <div class="form-group row">
                 <label for="inputApiKey" class="col-sm-3 col-form-label">АПИ ключ</label>
                 <div class="col-sm-9">
-                  <input type="password" id="inputApiKey" class="form-control" required placeholder="API KEY">
+                  <input type="password" name="apiKey" id="inputApiKey" class="form-control" required placeholder="API KEY">
                 </div>
               </div>
 
               <div class="form-group row">
                 <label for="inputSecretKey" class="col-sm-3 col-form-label">Секретный ключ</label>
                 <div class="col-sm-9">
-                  <input type="password" id="inputSecretKey" required class="form-control" placeholder="SECRET KEY">
+                  <input type="password" name="secretKey" id="inputSecretKey" required class="form-control" placeholder="SECRET KEY">
                 </div>
               </div>
 
@@ -108,15 +107,15 @@
 
                 <div class="col-sm-9">
                   <div class="form-check-input">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked name="plan">
-                    <label class="form-check-label" for="exampleRadios1">
+                    <input class="form-check-input" type="radio" id="exampleRadios1" value="standart-plan" checked name="plan">
+                    <label class="form-check-label" for="plan">
                     Начальный план
                     </label>
                   </div>
 
                   <div class="form-check-input">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" name="plan" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
+                    <input class="form-check-input" type="radio" id="exampleRadios2" name="plan" value="advanced-plan">
+                    <label class="form-check-label" for="plan">
                     Продвинутый план
                     </label>
                   </div>
@@ -126,7 +125,7 @@
               <div class="row text-center">
                 <button class="btn btn-primary sendBtn" type="submit">Отправить</button>
               </div>
-            </form>
+            </form> <!-- END OF PURCHASE FORM -->
           </div>
         </div>
       </div>
@@ -276,8 +275,6 @@
             <p class="mb-0">Понимание того, на что не стоит обращать внимания, столь же важно, как понимание того, на чем следует сфокусироваться.</p>
             <footer class="blockquote-footer">Уоррен Баффет</footer>
           </blockquote>
-          
-          <a href="#" class="app_download"><img src="..public\images\app-store-download.png" alt=""></a>
         </div>
 
         <div class="col-md-2 col-md-offset-2 col-sm-4 col-xs-6 footer-links">

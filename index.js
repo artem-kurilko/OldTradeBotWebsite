@@ -1,10 +1,14 @@
 'use strict';
 
 const mysql = require("mysql2");
+const bodyParser = require("body-parser");
 const express = require('express');
 const server = express();
 
 const PORT = process.env.PORT || 3000;
+
+// add parser for post request
+const urlencodedParser = bodyParser.urlencoded({extended: false});
 
 server.use("/public", express.static('public'));
 
@@ -28,13 +32,30 @@ server.get('/', function(request, response) {
     response.sendFile(__dirname + '/views/index.html');
 });
 
-server.post('/checkout', function(request, response){
+// redirect user to checkout page and save his information to db
+server.post('/checkout', urlencodedParser, function(request, response){
+    console.log(request.body);
+    let purchasePlan;
+    console.log(request.body.plan);
+
+    if (!request.body) return response.sendStatus(400);
+    
+    else if (request.body.plan == 'standart-plan') {
+      console.log(true);
+     purchasePlan = 1;
+    }
+    
+    else {
+      console.log(false);
+      purchasePlan = 0;
+    }
+    connection.execute(`INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key) VALUES("${request.body.userName}", "${request.body.email}", "${purchasePlan}", "${request.body.apiKey}", "${request.body.secretKey}");`);
     response.sendFile(__dirname + '/views/checkout.html');
 });
 
 server.get('*', function(request, response){
     if (request.accepts('html')) {
-        response.sendFile(__dirname + '/view/error.html');
+        response.sendFile(__dirname + '/views/error.html');
         return;
     }
 });
