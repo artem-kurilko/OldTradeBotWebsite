@@ -5,9 +5,11 @@ const bodyParser = require("body-parser");
 const express = require('express');
 const server = express();
 
+let RECEIVER_EMAIL;
+
 const PORT = process.env.PORT || 3000;
 
-// add parser for post request
+// Parser for post request
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 
 server.use("/public", express.static('public'));
@@ -29,14 +31,12 @@ connection.connect(function (err) {
 
 // Website's API
 server.get('/', function(request, response) {
-    response.sendFile(__dirname + '/views/index.html');
+    response.sendFile(__dirname + '/view/index.html');
 });
 
-// redirect user to checkout page and save his information to db
+// Redirect user to checkout page and save his information to db
 server.post('/checkout', urlencodedParser, function(request, response){
-    console.log(request.body);
     let purchasePlan;
-    console.log(request.body.plan);
 
     if (!request.body) return response.sendStatus(400);
     
@@ -50,12 +50,32 @@ server.post('/checkout', urlencodedParser, function(request, response){
       purchasePlan = 0;
     }
     connection.execute(`INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key) VALUES("${request.body.userName}", "${request.body.email}", "${purchasePlan}", "${request.body.apiKey}", "${request.body.secretKey}");`);
-    response.sendFile(__dirname + '/views/checkout.html');
+    response.sendFile(__dirname + '/view/checkout.html');
+});
+
+// Contact url
+server.post('/send-mail', urlencodedParser, function(request, response){
+    let mailOptions = {
+        from: 'kurilko365@gmail.com',
+        to: `${request.body.receiverEmail}`,
+        subject: 'Заявка на доступ к трейд боту',
+        text: 'That was easy!'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
+    response.redirect('http://localhost:3000');
 });
 
 server.get('*', function(request, response){
     if (request.accepts('html')) {
-        response.sendFile(__dirname + '/views/error.html');
+        response.sendFile(__dirname + '/view/error.html');
         return;
     }
 });
@@ -64,30 +84,14 @@ server.listen(PORT, () => {
     console.log(`Server has been started on ${PORT} port...`)
 });
 
-/*
 // Sending Email
 var nodemailer = require('nodemailer');
 
-var transporter = nodemailer.createTransport({
+let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'kurilko365@protonmail.com',
+    user: 'kurilko365@gmail.com',
     pass: 'Cfd802vds36'
   }
 });
 
-var mailOptions = {
-  from: 'kurilko365@protonmail.com',
-  to: `${RECEIVER_EMAIL}`,
-  subject: 'Заявка на доступ к трейд боту',
-  text: 'That was easy!'
-};
-
-transporter.sendMail(mailOptions, function(error, info){
-  if (error) {
-    console.log(error);
-  } else {
-    console.log('Email sent: ' + info.response);
-  }
-});
-*/

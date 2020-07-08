@@ -254,10 +254,10 @@
         <div class="col-md-12 text-center">
           <p class="subtitle"></p>
           <h3>Оставьте свою почту и мы с вами свяжемся.</h3>
-          <form action="">
+          <form action="http://localhost:3000/send-mail" method="post">
             <div class="form-group send-email">
-              <input type="email" required placeholder="Email here">
-              <a href="#" class="btn btn-green">Отправить</a>
+              <input type="email" autocomplete="on" name="receiverEmail" required placeholder="Email here">
+              <button type="submit" class="btn btn-green">Отправить</button>
             </div>
           </form>
         </div>
@@ -270,7 +270,6 @@
     <div class="container footer-container">
       <div class="row">
         <div class="col-md-4">
-          <img class="logo" src="..public\images\logo.png" alt="">
           <blockquote class="blockquote">
             <p class="mb-0">Понимание того, на что не стоит обращать внимания, столь же важно, как понимание того, на чем следует сфокусироваться.</p>
             <footer class="blockquote-footer">Уоррен Баффет</footer>
