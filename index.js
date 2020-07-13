@@ -56,8 +56,8 @@ server.post('/send-mail', urlencodedParser, function(request, response){
     let mailOptions = {
         from: 'cryptodealbot@gmail.com',
         to: `${request.body.receiverEmail}`,
-        subject: 'Заявка на доступ к трейд боту',
-        text: 'That was easy!'
+        subject: 'Ответ от cryptoDealBot команды',
+        text: 'Здравствуйте.\n\nСпасибо, что связались с нами.\n\nБудем рады ответить на ваши вопросы по поводу нашего сервиса.\n\nМы увидим ваше письмо и обязательно ответим вам в течении 6 часов.\n\nС уважением,\ncryptoDealBot команда.'
     };
 
     transporter.sendMail(mailOptions, function(error, info){
@@ -68,7 +68,7 @@ server.post('/send-mail', urlencodedParser, function(request, response){
         }
     });
 
-    response.redirect('http://localhost:3000');
+    response.redirect('/');
 });
 
 server.get('*', function(request, response){
