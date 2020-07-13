@@ -68,7 +68,7 @@ server.post('/send-mail', urlencodedParser, function(request, response){
         }
     });
 
-    response.redirect('/');
+    response.redirect('https://cryptodealbot.com');
 });
 
 server.get('*', function(request, response){
