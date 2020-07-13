@@ -91,7 +91,24 @@ $(document).ready(function() {
 
     // Magnific Popup
     $(".lightbox").magnificPopup();
-
-
-
 });
+
+
+
+let dialog = document.querySelector('dialog');
+let delayInMilliseconds = 3000;
+
+document.querySelector('#show-modal').onclick = function() {
+	dialog.show(); 
+
+	setTimeout(function(){
+		dialog.close();
+	}, delayInMilliseconds);
+};
+
+
+
+
+
+
+

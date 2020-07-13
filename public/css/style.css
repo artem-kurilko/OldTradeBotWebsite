@@ -269,6 +269,33 @@ ul > li {
   color: #26272d;
 }
 
+#main-nav dialog{
+  position: fixed;
+  top: 2%;
+  left: 70%;
+  width: 280px;
+  background: #60BB71;
+  min-height: 60px;
+  height: 64px;
+  opacity: 1;
+  border: none;
+  border-radius: 6px;
+  transition: all 4s ease-in;
+  z-index: 10;
+}
+
+dialog i{
+  padding-right: 7px;
+}
+
+dialog p{
+  font-weight: 400;
+  letter-spacing: .5px;
+  padding: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
 
 #main-nav #slide_out_menu {
   position: fixed;
