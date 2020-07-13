@@ -14,7 +14,7 @@ server.use("/public", express.static('public'));
 
 // Connect to database
 const connection = mysql.createConnection({
-  host: "localhost",
+  host: "cryptodealbot",
   user: "root",
   database: "tradebot",
   password: "Atmp123key"
