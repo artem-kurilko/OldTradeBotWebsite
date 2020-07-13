@@ -14,8 +14,7 @@ server.use("/public", express.static('public'));
 
 // Connect to database
 const connection = mysql.createConnection({
-  host: "51.195.154.13",
-  port: "3000",
+  host: "localhost",
   user: "root",
   database: "tradebot",
   password: "Atmp123key"
@@ -53,7 +52,7 @@ server.post('/checkout', urlencodedParser, function(request, response){
 });
 
 // Contact url
-server.post('/send-mail', urlencodedParser, function(request, response){
+server.post('/sendMail', urlencodedParser, function(request, response){
     let mailOptions = {
         from: 'cryptodealbot@gmail.com',
         to: `${request.body.receiverEmail}`,
@@ -67,7 +66,7 @@ server.post('/send-mail', urlencodedParser, function(request, response){
         }
     });
 
-    response.redirect('https://cryptodealbot.com');
+    response.redirect('/');
 });
 
 server.get('*', function(request, response){
