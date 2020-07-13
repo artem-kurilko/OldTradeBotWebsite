@@ -5,8 +5,6 @@ const bodyParser = require("body-parser");
 const express = require('express');
 const server = express();
 
-let RECEIVER_EMAIL;
-
 const PORT = process.env.PORT || 3000;
 
 // Parser for post request
@@ -56,7 +54,7 @@ server.post('/checkout', urlencodedParser, function(request, response){
 // Contact url
 server.post('/send-mail', urlencodedParser, function(request, response){
     let mailOptions = {
-        from: 'kurilko365@gmail.com',
+        from: 'cryptodealbot@gmail.com',
         to: `${request.body.receiverEmail}`,
         subject: 'Заявка на доступ к трейд боту',
         text: 'That was easy!'
@@ -90,8 +88,8 @@ var nodemailer = require('nodemailer');
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'kurilko365@gmail.com',
-    pass: 'Cfd802vds36'
+    user: 'cryptodealbot@gmail.com',
+    pass: 'Atmp123key'
   }
 });
 
