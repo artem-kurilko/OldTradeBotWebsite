@@ -14,7 +14,8 @@ server.use("/public", express.static('public'));
 
 // Connect to database
 const connection = mysql.createConnection({
-  host: "cryptodealbot",
+  host: "51.195.154.13",
+  port: "3000",
   user: "root",
   database: "tradebot",
   password: "Atmp123key"
@@ -63,8 +64,6 @@ server.post('/send-mail', urlencodedParser, function(request, response){
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
             console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
         }
     });
 
