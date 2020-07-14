@@ -16,9 +16,7 @@ $(document).ready(function() {
 			$('#slide_out_menu').removeClass('scrolled');
 		};
 
-
 		//Scroll Effects
-
 	});
 
 
@@ -94,7 +92,7 @@ $(document).ready(function() {
 });
 
 
-
+// show message sent dialog
 let dialog = document.querySelector('dialog');
 let delayInMilliseconds = 3000;
 
@@ -104,7 +102,10 @@ document.querySelector('#show-modal').onclick = function() {
 	setTimeout(function(){
 		dialog.close();
 	}, delayInMilliseconds);
-};
+}
+
+
+
 
 
 

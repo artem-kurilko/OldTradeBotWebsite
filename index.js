@@ -2,8 +2,17 @@
 
 const mysql = require("mysql2");
 const bodyParser = require("body-parser");
+const paypal = require('paypal-rest-sdk');
 const express = require('express');
 const server = express();
+let planCost;
+
+
+paypal.configure({
+    'mode': 'live',
+    'client_id': 'AdOp_5ndL3gYSKO6pLTtyLbQrLEaS2f3vzfhbp0spNHDZze612iyN3198pme6tpgb1NyusSEcmpVeCUV',
+    'client_secret': 'EGOHd5LPu8TpeIvoIBKPLZzzHN7HQCLK30v80HCuVuju2cCpf1ueDEQmfiwbUgz4-poXD2P8qtvb2Sva'
+});
 
 const PORT = process.env.PORT || 3000;
 
@@ -32,6 +41,8 @@ server.get('/', function(request, response) {
     response.sendFile(__dirname + '/view/index.html');
 });
 
+/***** Payment *****/
+
 // Redirect user to checkout page and save his information to db
 server.post('/checkout', urlencodedParser, function(request, response){
     let purchasePlan;
@@ -39,19 +50,84 @@ server.post('/checkout', urlencodedParser, function(request, response){
     if (!request.body) return response.sendStatus(400);
     
     else if (request.body.plan == 'standart-plan') {
-      console.log(true);
-     purchasePlan = 1;
+        planCost = 5;
+        purchasePlan = 1;
     }
     
     else {
-      console.log(false);
+      planCost = 7.49;
       purchasePlan = 0;
     }
     connection.execute(`INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key) VALUES("${request.body.userName}", "${request.body.email}", "${purchasePlan}", "${request.body.apiKey}", "${request.body.secretKey}");`);
-    response.sendFile(__dirname + '/view/checkout.html');
+    const create_payment_json = {
+        "intent": "sale",
+        "payer": {
+            "payment_method": "paypal"
+        },
+        "redirect_urls": {
+            "return_url": "https://cryptodealbot/success",
+            "cancel_url": "https://cryptodealbot/cancel"
+        },
+        "transactions": [{
+            "item_list": {
+                "items": [{
+                    "name": "Trade bot",
+                    "sku": "001",
+                    "price": planCost,
+                    "currency": "USD",
+                    "quantity": 1
+                }]
+            },
+            "amount": {
+                "currency": "USD",
+                "total": planCost
+            },
+            "description": "Crypto deal bot monthly payment"
+        }]
+        // response.sendFile(__dirname + '/view/checkout.html');
+    };
+
+    paypal.payment.create(create_payment_json, function (error, payment) {
+        if (error) {
+            throw error;
+        } else {
+            for(let i = 0;i < payment.links.length;i++){
+                if(payment.links[i].rel === 'approval_url'){
+                    response.redirect(payment.links[i].href);
+                }
+            }
+        }
+    });
 });
 
-// Contact url
+server.get('/success', (req, res) => {
+    const payerId = req.query.PayerID;
+    const paymentId = req.query.paymentId;
+
+    const execute_payment_json = {
+        "payer_id": payerId,
+        "transactions": [{
+            "amount": {
+                "currency": "USD",
+                "total": planCost
+            }
+        }]
+    };
+
+    paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
+        if (error) {
+            console.log(error.response);
+            throw error;
+        } else {
+            console.log(JSON.stringify(payment));
+            res.send('Success');
+        }
+    });
+});
+
+server.get('/cancel', (req, res) => res.send('Cancelled')); /* End of payment */
+
+/* Contact url */
 server.post('/sendMail', urlencodedParser, function(request, response){
     let mailOptions = {
         from: 'cryptodealbot@gmail.com',
@@ -80,7 +156,7 @@ server.listen(PORT, () => {
     console.log(`Server has been started on ${PORT} port...`)
 });
 
-// Sending Email
+/* Sending Email */
 var nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
@@ -90,4 +166,5 @@ let transporter = nodemailer.createTransport({
     pass: 'Atmp123key'
   }
 });
+
 
