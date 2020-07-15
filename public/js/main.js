@@ -96,13 +96,20 @@ $(document).ready(function() {
 let dialog = document.querySelector('dialog');
 let delayInMilliseconds = 3000;
 
-document.querySelector('#show-modal').onclick = function() {
-	dialog.show(); 
 
-	setTimeout(function(){
-		dialog.close();
-	}, delayInMilliseconds);
-}
+/*
+
+setTimeout(function(){
+					dialog.show(); 
+				});
+
+				setTimeout(function(){
+					dialog.close();
+				}, delayInMilliseconds);
+*/
+
+
+
 
 
 

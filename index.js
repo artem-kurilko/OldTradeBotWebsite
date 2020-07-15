@@ -30,10 +30,11 @@ const connection = mysql.createConnection({
 });
 
 connection.connect(function (err) {
-  if (err)
-    return console.error("Error: " + err.message);
-  else
-    console.log("Connected to MySQL.");
+    
+    if (err)
+        return console.error("Error: " + err.message);
+    else
+        console.log("Connected to MySQL.");
 });
 
 // Website's API
@@ -58,7 +59,8 @@ server.post('/checkout', urlencodedParser, function(request, response){
       planCost = 7.49;
       purchasePlan = 0;
     }
-    connection.execute(`INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key) VALUES("${request.body.userName}", "${request.body.email}", "${purchasePlan}", "${request.body.apiKey}", "${request.body.secretKey}");`);
+
+    connection.query(`INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key) VALUES("${request.body.userName}", "${request.body.email}", "${purchasePlan}", "${request.body.apiKey}", "${request.body.secretKey}");`);
     const create_payment_json = {
         "intent": "sale",
         "payer": {
