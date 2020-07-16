@@ -266,12 +266,17 @@ ul > li {
 
 #main-nav .logo {
   display: inline-block;
-  padding-top: 11px;
+  padding-top: 6px;
 }
 
-#main-nav .logo i{
-  font-size: 18px;
-  color: #26272d;
+.logo-string{
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logo-string span{
+  font-weight: bold;
 }
 
 #main-nav dialog{
@@ -319,17 +324,24 @@ dialog p{
 #main-nav #slide_out_menu .menu-close {
   position: absolute;
   color: #ffffff;
-  right: 20px;
+  right: 40px;
   top: 52px;
 }
 
+#main-nav #slide_out_menu .logo-string{
+  margin-top: 8px;
+  margin-left: 20px;
+  color: #fff;
+}
+
 #main-nav #slide_out_menu ul {
-  margin-top: 40px;
+  margin-top: 120px;
+  margin-left: 20px;
 }
 
 #main-nav #slide_out_menu ul li {
   display: block;
-  margin: 10px 0;
+  margin: 22px 0;
 }
 
 #main-nav #slide_out_menu ul li a {
@@ -342,10 +354,6 @@ dialog p{
 
 #main-nav #slide_out_menu ul li .btn-blue:hover {
   color: #ffffff;
-}
-
-#main-nav #slide_out_menu ul li:last-child {
-  margin-top: 20px;
 }
 
 #main-nav #slide_out_menu.xs-screen {
