@@ -27,8 +27,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 48px;
-  line-height: 72px;
+  font-size: 50px;
+  line-height: 58px;
+  margin-bottom: 64px;
 }
 
 h2 {
@@ -64,9 +65,13 @@ p {
   color: #8c8f94;
 }
 
-a {
+/* a {
   color: #267df4;
   text-decoration: underline;
+} */
+
+a:hover{
+  text-decoration: none;  
 }
 
 a:focus {
@@ -432,11 +437,11 @@ dialog p{
 }
 
 /*****************************************************
-*** iPhone Feature ***
+*** How Works Description ***
 *****************************************************/
 #how-works {
   position: relative;
-  padding: 180px 0 180px;
+  padding: 0px 0 60px;
 }
 
 #how-works .btns-container {
@@ -460,6 +465,80 @@ dialog p{
 
 #how-works .btns-container a:last-child {
   margin-right: 0;
+}
+
+#how-works .trade-image{
+  height: auto;
+} 
+
+/*****************************************************
+*** Quick Start ***
+*****************************************************/
+#quick-start{
+  padding: 120px 0 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+#quick-start .settings-pic{
+  margin-left: -16%;
+  padding-top: 100px;
+  padding-right: 40px;
+  height: auto;
+  width: 120%;
+}
+
+#quick-start .partners {
+  margin-top: 52px;
+}
+
+#quick-start .partners .title{
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#quick-start .partners ul {
+  margin: 26px 0 0;
+}
+
+#quick-start .partners ul li {
+  display: inline-block;
+  font-size: 22px;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+#quick-start .partners ul li a{
+  text-transform: uppercase;
+}
+
+#quick-start .partners .exchangeLogo{
+  height: auto;
+}
+
+#quick-start .partners ul li:last-child {
+  margin-right: 0;
+}
+
+#quick-start .partners .hitbtc{
+  color: #004552;
+}
+
+#quick-start .partners .hitbtc span{
+  color: #3AABD9;
+}
+
+
+#quick-start .partners .binance{
+  color: #F7B81E;
+}
+
+#quick-start .partners .exmo{
+  color: #2D92FF;
 }
 
 /*****************************************************

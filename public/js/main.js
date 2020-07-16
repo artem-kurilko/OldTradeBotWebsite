@@ -97,22 +97,10 @@ let dialog = document.querySelector('dialog');
 let delayInMilliseconds = 3000;
 
 
-/*
 
-setTimeout(function(){
-					dialog.show(); 
-				});
-
-				setTimeout(function(){
-					dialog.close();
-				}, delayInMilliseconds);
-*/
-
-
-
-
-
-
+$('#sendMailForm').submit(function(e){
+	dialog.show();   	
+});
 
 
 

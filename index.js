@@ -60,7 +60,14 @@ server.post('/checkout', urlencodedParser, function(request, response){
       purchasePlan = 0;
     }
 
-    connection.query(`INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key) VALUES("${request.body.userName}", "${request.body.email}", "${purchasePlan}", "${request.body.apiKey}", "${request.body.secretKey}");`);
+    let user = [request.body.userName, request.body.userName.email, request.body.purchasePlan, request.body.apiKey, request.body.secretKey]
+    let mysqlRequest = "INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key) VALUES(?, ?, ?, ?, ?);";
+
+    connection.query(mysqlRequest, user, function(err, results){
+        if (err) return console.log(err);
+        else console.log("Данные добавлены");
+    });
+
     const create_payment_json = {
         "intent": "sale",
         "payer": {
@@ -86,7 +93,6 @@ server.post('/checkout', urlencodedParser, function(request, response){
             },
             "description": "Crypto deal bot monthly payment"
         }]
-        // response.sendFile(__dirname + '/view/checkout.html');
     };
 
     paypal.payment.create(create_payment_json, function (error, payment) {
@@ -143,6 +149,7 @@ server.post('/sendMail', urlencodedParser, function(request, response){
             console.log(error);
         }
     });
+
 
     response.redirect('/');
 });
