@@ -972,9 +972,13 @@ ADAPTIVE
     font-size: 32px;
   }
 
+  .purchase-form{
+    min-width: 346px;
+  }
+
   .purchase-form label{
     margin-left: 0;
-  }
+  } 
 }
 
 @media only screen and (max-width: 428px){
