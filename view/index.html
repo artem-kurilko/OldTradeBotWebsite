@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172635750-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172635750-1');
+  </script>
+  
   <meta charset="utf-8">
   <meta name="description" content="Crypto trade bot">
   <meta name="keywords" content="crypto, cryptocurrency, crypto trading bot, trading bot, cryptocurrency trading bot,automated trading">
@@ -16,22 +26,15 @@
   <link rel="stylesheet" href="..\public\css\animate.min.css"><!-- Animate -->
 	<link rel="stylesheet" href="..\public\css\style.css"> <!-- Resource style -->
   <link rel="stylesheet" href="..\public\css\magnific-popup.css"> <!-- Resource style -->
-
+  
+  <!-- Google monitor conversion -->
+  <!-- Global site tag (gtag.js) - Google Ads: 616461264 --> <script async  src="https://www.googletagmanager.com/gtag/js?id=AW-616461264"></script>  <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-616461264'); </script>
 </head>
 <body>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172635750-1"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-172635750-1');
-  </script>
   
   <noscript>You must <a href="http://www.enable-javascript.com" target="_blank">enable JavaScript</a> in your web browser in order to pay via Stripe.</noscript>
 
-  <!-- Main nav -->
+  <!-- Header -->
   <header id="main-nav">
     <div class="container">
 
@@ -51,23 +54,26 @@
         </ul>
       </div> <!-- / Burger menu -->
       
+      <!-- Main nav -->
       <div class="row">
-        <div class="col-md-5">
+        
+        <div class="col-md-4">
           <ul class="left">
             <li><a href="#features">Характеристики</a></li>
             <li><a href="#plan">Стоимость</a></li>
           </ul>
         </div>
-        <div class="col-md-2 text-center">
+
+        <div class="col-md-4 text-center">
           <a href="#" class="logo">
             <p class="logo-string">crypto<span>deal</span>bot</p>
-            </a>
+          </a>          
           <dialog id="sentMessageModal">
             <p><i class="fa fa-check check-icon" aria-hidden="true"></i>Сообщение отправлено</p>
-            <button class="fuckme"></button>
           </dialog>
         </div>
-        <div class="col-md-5">
+        
+        <div class="col-md-4">
           <ul class="right">
               <li><a href="#quick-start" class="help">Как подключить</a></li>
               <li><a href="#contact">Помощь</a></li>
@@ -80,49 +86,49 @@
   <section id="header">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <h1 class="wow fadeInUp">Доход не требующий вашего контроля</h1>
-          <p class="wow fadeInUp" data-wow-delay=".2s">Получите доступ к торговому боту который анализирует рыночную информацию от имени пользователя, и не требует вашего участия в процессе торговли. ПО настроено на автоматическую торговлю с самыми популярным и надёжными криптовалютными биржами. </p>
+          <p class="wow fadeInUp" data-wow-delay=".2s">Получите доступ к торговому боту который анализирует рыночную информацию криптовалют от имени пользователя, и не требует вашего участия в процессе торговли. ПО настроено на автоматическую торговлю с самыми популярным и надёжными криптовалютными биржами. </p>
         </div>
 
         <!-- Purchase form -->
-        <div class="col-md-5 col-md-offset-1">
+        <div class="col-xl-5 col-xl-offset-1 col-lg-5 col-lg-offset-1 col-md-5 col-offset-1 col-sm-12 col-xs-12">
           <div class="purchase-form">
             <form action="/checkout" method="post">
               <h3 class="text-center">Оставить заявку</h3>
 
               <div class="form-group row">
-                <label for="inputName" class="col-sm-3 col-form-label">Имя</label>
-                <div class="col-sm-9">
+                <label for="inputName" class="col-sm-3 col-xs-3 col-form-label">Имя</label>
+                <div class="col-sm-9 col-xs-8">
                   <input type="text" name="userName" required class="form-control" id="inputName" placeholder="Ваше имя" >
                 </div>
               </div>
                 
               <div class="form-group row">
-                <label for="inputEmail" class="col-sm-3 col-form-label">Почта</label>
-                <div class="col-sm-9">
+                <label for="inputEmail" class="col-sm-3 col-xs-3 col-form-label">Почта</label>
+                <div class="col-sm-9 col-xs-8">
                   <input type="email" name="email" required class="form-control" id="inputEmail" placeholder="Email">
                 </div>
               </div>
 
               <div class="form-group row">
-                <label for="inputApiKey" class="col-sm-3 col-form-label">АПИ ключ</label>
-                <div class="col-sm-9">
+                <label for="inputApiKey" class="col-sm-3 col-xs-3 col-form-label">АПИ ключ</label>
+                <div class="col-sm-9 col-xs-8">
                   <input type="password" name="apiKey" id="inputApiKey" class="form-control" required placeholder="API KEY">
                 </div>
               </div>
 
               <div class="form-group row">
-                <label for="inputSecretKey" class="col-sm-3 col-form-label">Секретный ключ</label>
-                <div class="col-sm-9">
+                <label for="inputSecretKey" class="col-sm-3 col-xs-3 col-form-label">Секретный ключ</label>
+                <div class="col-sm-9 col-xs-8">
                   <input type="password" name="secretKey" id="inputSecretKey" required class="form-control" placeholder="SECRET KEY">
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-3">Тариф</label>
+                <label class="col-sm-3 col-xs-3">Тариф</label>
 
-                <div class="col-sm-9">
+                <div class="col-sm-9 col-xs-8">
                   <div class="form-check-input">
                     <input class="form-check-input" type="radio" id="exampleRadios1" value="standart-plan" checked name="plan">
                     <label class="form-check-label" for="plan">
@@ -153,7 +159,7 @@
   <section id="features">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 feature-item">
+        <div class="col-md-4 col-sm-12 col-xs-12 feature-item">
           <div class="feature wow fadeInUp">
             <div class="f-icon">
               <img src="..\public\images\icons\lock.png" alt="Безопасность">
@@ -167,7 +173,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 feature-item">
+        <div class="col-md-4 col-sm-12 col-xs-12 feature-item">
           <div class="feature wow fadeInUp" data-wow-delay=".1s">
             <div class="f-icon">
               <img src="..\public\images\icons\speed.png" alt="Скорость">
@@ -179,7 +185,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 feature-item">
+        <div class="col-md-4 col-sm-12 col-xs-12 feature-item">
             <div class="feature wow fadeInUp" data-wow-delay=".1s">
             <div class="f-icon">
               <img src="..\public\images\icons\reliability.png" alt="Надежность">
@@ -199,7 +205,7 @@
   <section id="how-works">
     <div class="container">
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12">
           <h2>
             Ваши инвестиции защищены
           </h2>
@@ -209,10 +215,10 @@
           </p>
           <div class="btns-container">
             <a href="#" class="btn btn-blue">Заказать тариф <i class="fa fa-arrow-right"></i></a>
-            <a href="#plan" class="btn">Читать далее</a>
+            <a href="#quick-start" class="btn">Читать далее</a>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-xs-12">
           <div class="wow fadeInLeft"> 
             <img src="..\public\images\charts.png" class="trade-image" alt="График цен">
           </div>
@@ -225,14 +231,9 @@
   <section id="quick-start">
     <div class="container">
       <div class="row">
-        <div class="col-md-7">
-          <div class="wow fadeInRight">
-            <img src="..\public\images\settings.png" class="settings-pic" alt="Настройка апи ключей">
-          </div>
-        </div>
-        <div class="col-md-5">
+        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12">
           <h2>Как подключится к боту</h2>
-          <p>Для того чтобы дать доступ торговому боту к вашему аккаунту, вам необходимо создать апи ключ в настройках вашей крипто биржи.<br><br> Добавьте доступ к торговле, как указано на фото. Разрешение на вывод средств не нужно.</p>
+          <p>Для того чтобы дать доступ торговому боту к вашему аккаунту, вам необходимо создать апи ключ в настройках вашей крипто биржи.<br><br> Добавьте доступ к торговле, как указано на фото. Разрешение на вывод средств не требуется.</p>
           <div class="partners">
             <div class="title">Пошаговое руководство</div>
             <ul>
@@ -242,6 +243,12 @@
               
               <li><a href="https://helpdesk.bitsgap.com/ru/articles/3955838-%D0%BA%D0%B0%D0%BA-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-api-%D0%BA%D0%BB%D1%8E%D1%87-%D0%BD%D0%B0-%D0%B1%D0%B8%D1%80%D0%B6%D0%B5-exmo" class="exmo"><img src="..\public\images\logo\exmo.png" alt="Exmo" class="exchangeLogo"> exmo</a></li>
             </ul>
+          </div>
+        </div>
+
+        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12">
+          <div class="wow fadeInRight">
+            <img src="..\public\images\settings.png" class="settings-pic" alt="Настройка апи ключей">
           </div>
         </div>
       </div>
@@ -313,26 +320,29 @@
   <footer id="footer">
     <div class="container footer-container">
       <div class="row">
-        <div class="col-md-4">
+        
+        <div class="col-md-4 col-sm-12">
           <blockquote class="blockquote">
             <p class="mb-0">Понимание того, на что не стоит обращать внимания, столь же важно, как понимание того, на чем следует сфокусироваться.</p>
             <footer class="blockquote-footer">Уоррен Баффет</footer>
           </blockquote>
         </div>
 
-        <div class="col-md-2 col-md-offset-2 col-sm-4 col-xs-6 footer-links">
+        <div class="col-md-2 col-md-offset-2 col-sm-4 col-xs-4 footer-links">
           <ul>
             <li><p class="title">Узнать больше</p></li>
             <li><a href="#how-works">Как это работает?</a></li>
           </ul>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 footer-links">
+        
+        <div class="col-md-2 col-sm-4 col-xs-4 footer-links">
           <ul>
             <li><p class="title">Стоимость</p></li>
             <li><a href="#plan">Тарифные планы</a></li>
           </ul>
         </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 footer-links">
+
+        <div class="col-md-2 col-sm-4 col-xs-4 footer-links">
           <ul>
             <li><p class="title">Поддержка</p></li>
             <li><a href="#contact">Напишите нам</a></li>
@@ -342,6 +352,7 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="..\public\js\jquery-2.1.4.min.js"></script> <!-- jQuery -->
   <script src="..\public\js\bootstrap.min.js"></script>  <!-- Bootstrap -->
   <script src="..\public\js\wow.min.js"></script>  <!-- wow -->

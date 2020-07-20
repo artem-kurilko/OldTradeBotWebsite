@@ -167,7 +167,6 @@ ul > li {
 /*****************************************************
 *** Forms ***
 *****************************************************/
-#ready-to-buy .form-group,
 #contact .form-group {
   position: relative;
   width: 502px;
@@ -401,6 +400,7 @@ dialog p{
   border: 1px solid grey;
   border-radius: 4px;
   padding: 40px 40px 40px 40px;
+  min-width: 400px;
 }
 
 .purchase-form h3{
@@ -427,10 +427,6 @@ dialog p{
 /*****************************************************
 *** Features ***
 *****************************************************/
-/* #features {
-  padding: 60px 0;
-} */
-
 #features .feature {
   padding: 200px 38px;
 }
@@ -476,6 +472,8 @@ dialog p{
 }
 
 #how-works .trade-image{
+  margin-top: 40px;
+  width: 130%;
   height: auto;
 } 
 
@@ -489,11 +487,10 @@ dialog p{
 }
 
 #quick-start .settings-pic{
-  margin-left: -16%;
-  padding-top: 100px;
+  padding-top: 70px;
   padding-right: 40px;
   height: auto;
-  width: 120%;
+  width: 130%;
 }
 
 #quick-start .partners {
@@ -669,17 +666,9 @@ dialog p{
   padding-bottom: 25px;
 }
 
-#footer .logo {
-  margin-bottom: 36px;
-}
-
 #footer p {
   font-size: 14px;
   line-height: 24px;
-}
-
-#footer .app_download img {
-  margin-top: 6px;
 }
 
 #footer ul li .title {
@@ -700,18 +689,66 @@ dialog p{
   color: #26272d;
 }
 
+
 /*****************************************************
 ADAPTIVE
 *****************************************************/
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1310px){
+   #how-works .trade-image{
+      width: 120%;
+   }
+
+   #quick-start .settings-pic{
+      width: 120%;
+   }
+}
+
+@media only screen and (max-width: 1230px){
+  #header{
+    margin-left: 40px;
+  }
+
+  .purchase-form{
+    margin-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  #header{
+      margin-left: 0;
+  }
+
+  #header h1{
+    font-size: 44px;
+  }
+    
+  .purchase-form{
+    margin-top: -40px;
+    margin-left: 10%;
+    margin-right: -20%;
+  } 
+
+  #how-works .trade-image{
+    padding-top: 40px;
+    width: 86%;
+    margin-left: 7%;
+  }
+
+  #quick-start .settings-pic{
+    width: 100%;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
   /*** Main Nav ***/
   #main-nav .col-md-4:first-child,
   #main-nav .col-md-4:last-child {
     display: none;
   }
-  #main-nav .logo {
-    padding-top: 0px;
-  }
+
+  #main-nav .col-md-4
+  
   #main-nav #slide_out_menu {
     position: fixed;
     display: block;
@@ -719,12 +756,20 @@ ADAPTIVE
     height: 100%;
     left: -300px;
   }
-  #main-nav #slide_out_menu .menu-close {
-    top: 41px;
+
+  #header {
+    padding-top: 230px;
   }
+  
+  #header .purchase-form{
+    margin: 220px auto;
+    width: 70%;  
+  }
+
   /*** Features ***/
   #features {
-    padding: 100px 0;
+    padding: 0 0;
+    margin-bottom: 200px;
   }
   #features .feature-item {
     margin-bottom: 80px;
@@ -742,86 +787,109 @@ ADAPTIVE
     font-size: 42px;
     color: #267df4;
   }
-
-/*** How works ***/
-
-  #how-works .iphone-showcase {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    padding: 0 15px;
-    /*margin-top: 64px;*/
-  }
-  #how-works .iphone-showcase img {
-    width: 100%;
-  }
  
+  #quick-start .settings-pic{
+    margin-left: -5%;
+    padding-right: 0;
+    width: 110%;
+  }
+
+  #how-works .trade-image{
+    width: 100%;
+    margin-left: -0.1%;
+  }
+
   /*** Plan ***/
   #plan {
     padding: 120px 0 150px;
   }
-  #footer .footer-links {
-    margin-bottom: 30px;
+
+  #plan .info{
+    padding-bottom: 40px;
   }
-  #footer .footer-links:last-child {
+
+  #contact{
     margin-bottom: 0;
+    padding-bottom: 0;
   }
-  /*** Copyright Container ***/
-  .copyright-container .text-right {
-    text-align: left;
-    margin-top: 22px;
+
+  #footer{
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
+  #footer .footer-links {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .blockquote{
+    margin-bottom: 40px;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  /*** iPhone Screens ***/
-  #iphone-screens {
-    padding: 120px 0 460px;
+@media only screen and (max-width: 990px){
+  #how-works .trade-image{
+    margin-top: 60px;
   }
-  #iphone-screens .images-list li {
-    position: absolute;
-    width: 178px;
-    top: 52px;
+}
+
+@media only screen and (max-width: 800px){
+    #how-works .trade-image{
+      margin-top: 10px;
+      width: 90%;
+      margin-left: 5%;
+    } 
+
+    #quick-start .settings-pic{
+      width: 100%;
+      margin-left: 0;
+    }         
+}
+
+@media only screen and (max-width: 770px) {
+    #features .feature{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    #how-works .col-sm-12{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .footer-links ul li{
+      padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 768px){
+  .purchase-form label{
+      padding-right: 0;
   }
-  #iphone-screens .images-list li img {
-    max-width: 100%;
+}
+
+@media only screen and (max-width: 750px){
+  #header .col-sm-12:first-child{
+    padding-left: 30px;
+    padding-right: 30px;
   }
-  #iphone-screens .images-list li:nth-child(1) {
-    margin-left: -502px;
+}
+
+@media only screen and (max-width: 680px){
+  #how-works .trade-image{
+    width: 100%;
+    margin-left: 0;
   }
-  #iphone-screens .images-list li:nth-child(2) {
-    margin-left: -304px;
-  }
-  #iphone-screens .images-list li:nth-child(4) {
-    margin-right: -304px;
-  }
-  #iphone-screens .images-list li:nth-child(5) {
-    margin-right: -502px;
-  }
-  #iphone-screens .images-list li.main-img {
-    width: 220px;
-    margin-left: -110px;
+
+  #quick-start .settings-pic{
+    width: 110%;
+    margin-left: -5%;
   }
 }
 
 @media only screen and (max-width: 575px) {
-  input[type="text"],
-  input[type="email"] {
-    padding: 16px 26px;
-  }
-  /*** Header ***/
-  #header {
-    /*margin-bottom: 200px;*/
-    /*padding: 160px 0 2000px;*/
-  }
  
-  /*** Ready to Buy  ***/
-  #ready-to-buy .form-group .btn,
-  #contact .form-group .btn {
-    position: relative;
-    margin-top: 14px;
-  }
-
   /*** Plan ***/
   #plan {
     padding: 120px 0 100px;
@@ -842,4 +910,124 @@ ADAPTIVE
     width: 100%;
   }
 }
-/*# sourceMappingURL=style.css.map */
+
+@media only screen and (max-width: 573px){
+  #header .col-sm-12:first-child{
+    padding-top: 0;
+  }
+
+  #header h1{
+    font-size: 46px;
+  }
+
+  #how-works h2, #quick-start h2{
+    font-size: 44px;
+    line-height: normal;
+  }
+}
+
+@media only screen and (max-width: 535px){
+  #header h1{
+    margin-top: -30px;
+    font-size: 38px;
+    line-height: normal;
+  }
+
+  #features .feature .f-icon {
+    margin-bottom: 20px;
+  }
+
+  #quick-start .partners ul li a{
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .purchase-form{
+    padding: 20px 20px 20px 20px;
+  }
+
+  #how-works{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #how-works h2, #quick-start h2, #plan h2{
+    font-size: 38px;
+    line-height: normal;
+  }
+
+  #how-works p, #quick-start p, #plan p{
+    font-size: 18px;
+  }
+
+  #quick-start img{
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media only screen and (max-width: 455px){
+  #header h1{
+    font-size: 32px;
+  }
+
+  .purchase-form label{
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 428px){
+  #quick-start .partners ul li a{
+    font-size: 18px;
+  }
+
+  #quick-start .exchangeLogo{
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media only screen and (max-width: 390px){
+  #quick-start .partners ul li a{
+    font-size: 16px;
+  }
+
+  #quick-start .exchangeLogo{
+    width: 20px;
+    height: 20px;
+  }
+
+  #contact h3{
+    font-size: 24px;
+    line-height: normal;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  #header h1{
+    margin-top: -40px;
+  }
+
+  #header p{
+    font-size: 18px;
+  }
+
+  #how-works h2, #quick-start h2, #plan h2{
+    font-size: 30px;
+  }
+
+  #how-works p, #quick-start p, #plan p{
+    font-size: 16px;
+  }
+
+  #footer .footer-links{
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
