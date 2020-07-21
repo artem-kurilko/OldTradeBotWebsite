@@ -131,9 +131,15 @@ server.get('/success', (req, res) => {
             res.send('Success');
         }
     });
+
+    res.redirect('/paid')
 });
 
 server.get('/cancel', (req, res) => res.send('Cancelled')); /* End of payment */
+
+server.get('/paid', function(req, res){
+    res.sendFile(__dirname + '/view/paid.html');
+});
 
 /* Contact url */
 server.post('/sendMail', urlencodedParser, function(request, response){
