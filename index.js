@@ -5,8 +5,10 @@ const bodyParser = require("body-parser");
 const paypal = require('paypal-rest-sdk');
 const express = require('express');
 const server = express();
-let planCost;
+const log = require('fs');
 
+let planCost;
+let createdAt = new Date().toLocaleString();
 
 paypal.configure({
     'mode': 'live',
@@ -24,17 +26,17 @@ server.use("/public", express.static('public'));
 // Connect to database
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  database: "tradebot",
-  password: "Atmp123key"
+  user: "top_root",
+  password: "CryptoBot_000",
+  database: "tradebot"
 });
 
 connection.connect(function (err) {
     
     if (err)
-        return console.error("Error: " + err.message);
+      log.writeFileSync('log123.txt', err.message + "\n")
     else
-        console.log("Connected to MySQL.");
+       log.writeFileSync('log123.txt', "Connected to MySQL" + "\n");  
 });
 
 // Website's API
@@ -60,12 +62,12 @@ server.post('/checkout', urlencodedParser, function(request, response){
       purchasePlan = 0;
     }
 
-    let user = [request.body.userName, request.body.userName.email, request.body.purchasePlan, request.body.apiKey, request.body.secretKey]
-    let mysqlRequest = "INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key) VALUES(?, ?, ?, ?, ?);";
+    let user = [request.body.userName, request.body.email, purchasePlan, request.body.apiKey, request.body.secretKey, createdAt];
+    let mysqlRequest = "INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key, created_at) VALUES(?, ?, ?, ?, ?, ?);";
 
     connection.query(mysqlRequest, user, function(err, results){
-        if (err) return console.log(err);
-        else console.log("Данные добавлены");
+        if (err) log.writeFileSync('log123.txt', err.message + "\n");
+        else  log.writeFileSync('log123.txt',"Данные добавлены" + "\n");
     });
 
     const create_payment_json = {
