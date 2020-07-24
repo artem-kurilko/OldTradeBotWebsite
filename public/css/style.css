@@ -65,11 +65,6 @@ p {
   color: #8c8f94;
 }
 
-/* a {
-  color: #267df4;
-  text-decoration: underline;
-} */
-
 a:hover{
   text-decoration: none;  
 }
@@ -409,6 +404,7 @@ dialog p{
 
 .purchase-form .sendBtn{
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .purchase-form label{
@@ -417,6 +413,10 @@ dialog p{
 
 .purchase-form input{
   margin-left: 20px;
+}
+
+.purchase-form span{
+  font-size: 16px;
 }
 
 .form-control:before{
