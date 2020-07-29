@@ -1,4 +1,4 @@
-bin/
-.idea/
-node-modules/
-trade-bot-website.iml
+/bin
+/.idea
+/node-modules
+/trade-bot-website.iml
