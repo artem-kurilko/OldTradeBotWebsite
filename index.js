@@ -12,8 +12,8 @@ let createdAt = new Date().toLocaleString();
 
 paypal.configure({
     'mode': 'live',
-    'client_id': 'AdOp_5ndL3gYSKO6pLTtyLbQrLEaS2f3vzfhbp0spNHDZze612iyN3198pme6tpgb1NyusSEcmpVeCUV',
-    'client_secret': 'EGOHd5LPu8TpeIvoIBKPLZzzHN7HQCLK30v80HCuVuju2cCpf1ueDEQmfiwbUgz4-poXD2P8qtvb2Sva'
+    'client_id': 'sandbox...',
+    'client_secret': 'sandbox...'
 });
 
 const PORT = process.env.PORT || 3000;
@@ -26,17 +26,17 @@ server.use("/public", express.static('public'));
 // Connect to database
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "top_root",
-  password: "CryptoBot_000",
+  user: "root",
+  password: "password",
   database: "tradebot"
 });
 
 connection.connect(function (err) {
     
     if (err)
-      log.writeFileSync('log123.txt', err.message + "\n")
+      log.writeFileSync('log.txt', err.message + "\n")
     else
-       log.writeFileSync('log123.txt', "Connected to MySQL" + "\n");  
+       log.writeFileSync('log.txt', "Connected to MySQL" + "\n");  
 });
 
 // Website's API
@@ -66,8 +66,8 @@ server.post('/checkout', urlencodedParser, function(request, response){
     let mysqlRequest = "INSERT INTO account_data(user_name, mail, is_standart_plan, api_key, secret_key, created_at) VALUES(?, ?, ?, ?, ?, ?);";
 
     connection.query(mysqlRequest, user, function(err, results){
-        if (err) log.writeFileSync('log123.txt', err.message + "\n");
-        else  log.writeFileSync('log123.txt',"Данные добавлены" + "\n");
+        if (err) log.writeFileSync('log.txt', err.message + "\n");
+        else  log.writeFileSync('log.txt',"Данные добавлены" + "\n");
     });
 
     const create_payment_json = {
@@ -76,8 +76,8 @@ server.post('/checkout', urlencodedParser, function(request, response){
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "https://cryptodealbot/success",
-            "cancel_url": "https://cryptodealbot/cancel"
+            "return_url": "https://cryptodealbot.com/success",
+            "cancel_url": "https://cryptodealbot.com/cancel"
         },
         "transactions": [{
             "item_list": {
@@ -146,10 +146,10 @@ server.get('/paid', function(req, res){
 /* Contact url */
 server.post('/sendMail', urlencodedParser, function(request, response){
     let mailOptions = {
-        from: 'cryptodealbot@gmail.com',
+        from: 'account@gmail.com',
         to: `${request.body.receiverEmail}`,
-        subject: 'Ответ от cryptoDealBot команды',
-        text: 'Здравствуйте.\n\nСпасибо, что связались с нами.\n\nБудем рады ответить на ваши вопросы по поводу нашего сервиса.\n\nМы увидим ваше письмо и обязательно ответим вам в течении 6 часов.\n\nС уважением,\ncryptoDealBot команда.'
+        subject: '',
+        text: ''
     };
 
     transporter.sendMail(mailOptions, function(error, info){
@@ -179,8 +179,8 @@ var nodemailer = require('nodemailer');
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'cryptodealbot@gmail.com',
-    pass: 'Atmp123key'
+    user: 'account@gmail.com',
+    pass: 'password'
   }
 });
 
